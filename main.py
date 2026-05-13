@@ -13,9 +13,7 @@ HOST = "aws-0-eu-central-1.pooler.supabase.com" # Vérifie bien cet hôte dans t
 PORT = 6543
 DBNAME = "postgres"
 
-DEFAULT_URL = f"postgresql+psycopg2://{USER}:{PASSWORD}@{HOST}:{PORT}/{DBNAME}?sslmode=require"
-
-DATABASE_URL = os.getenv("DATABASE_URL", DEFAULT_URL)
+DATABASE_URL = f"postgresql+psycopg2://{USER}:{PASSWORD}@{HOST}:{PORT}/{DBNAME}?sslmode=require"
 
 # Création de l'engine SQLAlchemy
 engine = create_engine(DATABASE_URL)
