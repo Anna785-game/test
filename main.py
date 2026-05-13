@@ -6,13 +6,15 @@ app = FastAPI(title="Supabase Connection Tester")
 
 # Configuration de la base de données
 # Sur Render, tu pourras configurer DATABASE_URL directement dans les variables d'environnement
-USER = "postgres"
+# Configuration corrigée pour passer par le Pooler IPv4
+USER = "postgres.hpratqkkfnevjrytnitp" # Format obligatoire pour le pooler
 PASSWORD = "anna33quinzel"
-HOST = "db.hpratqkkfnevjrytnitp.supabase.co"
-PORT = 5432  # Je te conseille le 6543 pour le pooling sur Render
+HOST = "aws-0-eu-central-1.pooler.supabase.com" # Vérifie bien cet hôte dans ton dashboard
+PORT = 6543
 DBNAME = "postgres"
 
 DEFAULT_URL = f"postgresql+psycopg2://{USER}:{PASSWORD}@{HOST}:{PORT}/{DBNAME}?sslmode=require"
+
 DATABASE_URL = os.getenv("DATABASE_URL", DEFAULT_URL)
 
 # Création de l'engine SQLAlchemy
