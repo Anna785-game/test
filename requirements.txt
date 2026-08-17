@@ -1,4 +1,7 @@
-fastapi 
-sqlalchemy 
-uvicorn   
-psycopg2-binary
+fastapi
+uvicorn
+face_recognition
+dlib
+numpy
+Pillow
+python-multipart
